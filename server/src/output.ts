@@ -1,3 +1,15 @@
+import { DepthObject, Signals } from "./models";
+var asciichart = require("asciichart");
+
+let history = {
+  prices: [],
+  sellWall1: [],
+  sellWall2: [],
+  sellWall3: [],
+  buyWall1: [],
+  buyWall2: [],
+  buyWall3: [],
+};
 const chalk = require("chalk");
 
 const mid = "\u25B6";
@@ -19,13 +31,13 @@ const getAngleSymbol = (angle: number) => {
   if (angle >= 90 && angle < 110) {
     return middown;
   }
-  if (angle > 110) {
+  if (angle >= 110) {
     return down;
   }
 };
 
-export const output = (signals) => {
-  let output = ``;
+export const stochOutput = (signals: Signals) => {
+  let output = `${signals.price} - `;
 
   Object.keys(signals.stoch).map((key) => {
     const valuek = signals.stoch[key].k.value;
@@ -46,7 +58,49 @@ export const output = (signals) => {
     const bd = colorsd.split(",")[2];
     const dValue = chalk.rgb(rd, gd, bd)(` ${Math.floor(valued)}${getAngleSymbol(angled)} `);
 
-    output += cross === "UP" ? chalk.bgRgb(0, 102, 0)(kValue + dValue) + "|" : cross === "DOWN" ? chalk.bgRgb(102, 0, 0)(kValue + dValue) + "|" : kValue + dValue + "|";
+    output += cross === "UP" ? chalk.bgGreen(kValue + dValue) + "|" : cross === "DOWN" ? chalk.bgRed(kValue + dValue) + "|" : kValue + dValue + "|";
   });
   console.log(output);
+};
+
+export const wallsOutput = (depth: DepthObject, signals: Signals) => {
+  const WIDTH = 60;
+  if (depth.buyWalls.length && depth.sellWalls.length) {
+    history.prices = [...history.prices, signals.price];
+    history.sellWall1 = [...history.sellWall1, depth.sellWalls[0].price];
+    history.sellWall2 = [...history.sellWall2, depth.sellWalls[1].price];
+    history.sellWall3 = [...history.sellWall3, depth.sellWalls[2].price];
+    history.buyWall1 = [...history.buyWall1, depth.buyWalls[0].price];
+    history.buyWall2 = [...history.buyWall2, depth.buyWalls[1].price];
+    history.buyWall3 = [...history.buyWall3, depth.buyWalls[2].price];
+    if (history.prices.length > WIDTH) {
+      history.prices.shift();
+    }
+    if (history.sellWall1.length > WIDTH) {
+      history.sellWall1.shift();
+    }
+    if (history.sellWall2.length > WIDTH) {
+      history.sellWall2.shift();
+    }
+    if (history.sellWall3.length > WIDTH) {
+      history.sellWall3.shift();
+    }
+    if (history.buyWall1.length > WIDTH) {
+      history.buyWall1.shift();
+    }
+    if (history.buyWall2.length > WIDTH) {
+      history.buyWall2.shift();
+    }
+    if (history.buyWall3.length > WIDTH) {
+      history.buyWall3.shift();
+    }
+    const config = {
+      offset: 3, // axis offset from the left (min 2)
+      padding: "       ", // padding string for label formatting (can be overridden)
+      height: 50, // any height you want
+      colors: [asciichart.red, asciichart.red, asciichart.red, asciichart.green, asciichart.green, asciichart.green, asciichart.yellow],
+    };
+    console.clear();
+    console.log(asciichart.plot([history.sellWall1, history.sellWall2, history.sellWall3, history.buyWall1, history.buyWall2, history.buyWall3, history.prices], config));
+  }
 };

@@ -47,5 +47,11 @@ export interface StochObject {
 }
 
 export interface Signals {
+  price: number;
   stoch: StochObject;
+}
+
+export interface DepthObject {
+  buyWalls: { price: number; volume: number }[];
+  sellWalls: { price: number; volume: number }[];
 }

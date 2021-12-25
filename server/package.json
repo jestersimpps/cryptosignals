@@ -10,11 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "asciichart": "^1.5.25",
     "axios": "^0.21.1",
     "chalk": "4.1.2",
     "console-table-printer": "^2.10.0",
     "node-binance-api": "^0.13.1",
     "node-telegram-bot-api": "^0.51.0",
+    "prompts": "^2.4.2",
     "simple-json-db": "^1.2.3",
     "technicalindicators": "^3.1.0"
   },

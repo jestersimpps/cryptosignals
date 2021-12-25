@@ -46,6 +46,7 @@ export class SignalService {
 
   calculateSignals(pair: string, candlesObject: CandlesObject): Signals {
     return {
+      price: candlesObject.t1m.length ? candlesObject.t1m[candlesObject.t1m.length - 1].close : null,
       stoch: this.calculateStoch(pair, candlesObject),
     };
   }

@@ -1,4 +1,4 @@
-import { Candle, CandlesObject } from "./models";
+import { Candle, CandlesObject, DepthObject } from "./models";
 
 const Binance = require("node-binance-api");
 const binance = new Binance().options({
@@ -56,5 +56,44 @@ export class ApiService {
     });
 
     setInterval(() => returnCandlesObject(candlesObject), UPDATE_TIME);
+  };
+
+  depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 5) => {
+    const UPDATE_TIME = 1000;
+    let depthObject: DepthObject = {
+      buyWalls: [],
+      sellWalls: [],
+    };
+
+    binance.websockets.depthCache([pair], (symbol, depth) => {
+      const bids = binance.sortBids(depth.bids);
+      const asks = binance.sortAsks(depth.asks);
+      let topBids = [];
+      let topAsks = [];
+      Object.keys(bids).forEach((price) => {
+        const volume = bids[price];
+        if (volume > Math.max(...topBids.map((b) => b.volume))) {
+          topBids = [...topBids, { price: +price, volume }];
+          if (topBids.length > numberOfWalls) {
+            topBids.shift();
+          }
+        }
+      });
+      Object.keys(asks).forEach((price) => {
+        const volume = asks[price];
+        if (volume > Math.max(...topAsks.map((b) => b.volume))) {
+          topAsks = [...topAsks, { price: +price, volume }];
+          if (topAsks.length > numberOfWalls) {
+            topAsks.shift();
+          }
+        }
+      });
+      depthObject = {
+        buyWalls: topBids,
+        sellWalls: topAsks,
+      };
+    });
+
+    setInterval(() => returnDepthObject(depthObject), UPDATE_TIME);
   };
 }
