@@ -46,7 +46,7 @@ export const output = (signals) => {
     const bd = colorsd.split(",")[2];
     const dValue = chalk.rgb(rd, gd, bd)(` ${Math.floor(valued)}${getAngleSymbol(angled)} `);
 
-    output += cross === "UP" ? chalk.bgGreen(kValue + dValue) + "|" : cross === "DOWN" ? chalk.bgRed(kValue + dValue) + "|" : kValue + dValue + "|";
+    output += cross === "UP" ? chalk.bgRgb(0, 102, 0)(kValue + dValue) + "|" : cross === "DOWN" ? chalk.bgRgb(102, 0, 0)(kValue + dValue) + "|" : kValue + dValue + "|";
   });
   console.log(output);
 };
