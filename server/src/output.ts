@@ -30,13 +30,14 @@ export const output = (signals) => {
   Object.keys(signals.stoch).map((key) => {
     const valuek = signals.stoch[key].k.value;
     const anglek = signals.stoch[key].k.angle;
+    const cross = signals.stoch[key].cross;
+
     const colorsk = signals.stoch[key].k.color.replace("rgb(", "").replace(")", "");
     const rk = colorsk.split(",")[0];
     const gk = colorsk.split(",")[1];
     const bk = colorsk.split(",")[2];
     const kValue = chalk.rgb(rk, gk, bk)(` ${Math.floor(valuek)}${getAngleSymbol(anglek)} `);
 
-    output += kValue;
     const valued = signals.stoch[key].d.value;
     const angled = signals.stoch[key].d.angle;
     const colorsd = signals.stoch[key].d.color.replace("rgb(", "").replace(")", "");
@@ -45,7 +46,7 @@ export const output = (signals) => {
     const bd = colorsd.split(",")[2];
     const dValue = chalk.rgb(rd, gd, bd)(` ${Math.floor(valued)}${getAngleSymbol(angled)} `);
 
-    output += dValue + "|";
+    output += cross === "UP" ? chalk.bgGreen(kValue + dValue) + "|" : cross === "DOWN" ? chalk.bgRed(kValue + dValue) + "|" : kValue + dValue + "|";
   });
   console.log(output);
 };

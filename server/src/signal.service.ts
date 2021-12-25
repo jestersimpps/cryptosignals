@@ -1,7 +1,7 @@
 import { getLastElement, roundNumber } from "./util";
 import { Candle, StochObject, CandlesObject, Signals } from "./models";
 import { numberToGreenRedColor } from "./color";
-import { calculateAngleOfChange } from "./angle";
+import { calculateAngleOfChange, getCross } from "./angle";
 const Stochastic = require("technicalindicators").Stochastic;
 
 let signalHistory = {
@@ -37,6 +37,7 @@ export class SignalService {
           color: numberToGreenRedColor(100 - d, 0, 100),
           angle: calculateAngleOfChange(stoch.map((s) => s.d)),
         },
+        cross: getCross(stoch),
       };
     }
 

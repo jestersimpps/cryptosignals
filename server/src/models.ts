@@ -33,6 +33,7 @@ export interface SingleStochObject {
     color: string;
     angle: number;
   };
+  cross: "UP" | "DOWN";
 }
 export interface StochObject {
   t1m: SingleStochObject;
