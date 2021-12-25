@@ -1,11 +1,13 @@
-import { calculateSignals } from "./signal.service";
-import { chartListener } from "./api.service";
+import { SignalService } from "./signal.service";
+import { ApiService } from "./api.service";
 import { CandlesObject } from "./models";
 
 const pair = "MATICUSDT";
+const signalService = new SignalService();
+const apiService = new ApiService();
 
-chartListener(pair, (candlesObject: CandlesObject) => {
-  const signals = calculateSignals(pair, candlesObject);
+apiService.chartListener(pair, (candlesObject: CandlesObject) => {
+  const signals = signalService.calculateSignals(pair, candlesObject);
 
-  console.log(signals);
+  console.log(signals.stoch);
 });

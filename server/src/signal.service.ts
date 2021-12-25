@@ -1,26 +1,50 @@
-import { CandlesObject } from "./models";
+import { getLastElement } from "./util";
+import { Candle, StochObject, CandlesObject, Signals } from "./models";
+import { numberToGreenRedColor } from "./color";
 const Stochastic = require("technicalindicators").Stochastic;
 
 let signalHistory = {
   stoch: {},
 };
 
-const calculateStoch = (candlesObject: CandlesObject) => {
-  const stochObject;
+export class SignalService {
+  constructor() {}
 
-  
-  let inputStoch = {
-    high: Object.values(candles1).map((t) => t["high"]),
-    low: Object.values(candles1).map((t) => t["low"]),
-    close: Object.values(candles1).map((t) => t["close"]),
-    period: 20,
-    signalPeriod: 6,
-  };
-  const stoch = Stochastic.calculate(inputStoch);
-  const stoch0 = stoch[stoch.length - 1];
-  if (!lastStoch) {
-    lastStoch = stoch0;
+  private calculateStoch(candlesObject: CandlesObject): StochObject {
+    const timeFrameArray = Object.keys(candlesObject);
+    let stochObject = {} as StochObject;
+
+    for (const timeFrame of timeFrameArray) {
+      const inputStoch = {
+        high: candlesObject[timeFrame].map((t: Candle) => t.high),
+        low: candlesObject[timeFrame].map((t: Candle) => t.low),
+        close: candlesObject[timeFrame].map((t: Candle) => t.close),
+        period: 20,
+        signalPeriod: 6,
+      };
+      const stoch = Stochastic.calculate(inputStoch);
+      const k = getLastElement(stoch, "k");
+      const d = getLastElement(stoch, "d");
+      stochObject[timeFrame] = {
+        k: {
+          value: k,
+          color: numberToGreenRedColor(k, 0, 100),
+          angle: getLastElement(stoch, "k"),
+        },
+        d: {
+          value: d,
+          color: numberToGreenRedColor(d, 0, 100),
+          angle: getLastElement(stoch, "d"),
+        },
+      };
+    }
+
+    return stochObject;
   }
-};
 
-export const calculateSignals = (pair: string, candlesObject: CandlesObject) => {};
+  calculateSignals(pair: string, candlesObject: CandlesObject): Signals {
+    return {
+      stoch: this.calculateStoch(candlesObject),
+    };
+  }
+}

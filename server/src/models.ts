@@ -44,3 +44,7 @@ export interface StochObject {
   t4h: SingleStochObject;
   t1d: SingleStochObject;
 }
+
+export interface Signals {
+  stoch: StochObject;
+}
