@@ -36,6 +36,18 @@ const getAngleSymbol = (angle: number) => {
   }
 };
 
+const drawBar = (width: number, color: "red" | "green") => {
+  let bar = "";
+  for (let index = 0; index < width; index++) {
+    if (color === "green") {
+      bar += chalk.bgGreen(" ");
+    } else {
+      bar += chalk.bgRed(" ");
+    }
+  }
+
+  return bar;
+};
 export const stochOutput = (signals: Signals) => {
   let output = `${signals.price} - `;
 
@@ -97,10 +109,26 @@ export const wallsOutput = (depth: DepthObject, signals: Signals) => {
     const config = {
       offset: 3, // axis offset from the left (min 2)
       padding: "       ", // padding string for label formatting (can be overridden)
-      height: 50, // any height you want
+      height: 30, // any height you want
       colors: [asciichart.red, asciichart.red, asciichart.red, asciichart.green, asciichart.green, asciichart.green, asciichart.yellow],
     };
     console.clear();
     console.log(asciichart.plot([history.sellWall1, history.sellWall2, history.sellWall3, history.buyWall1, history.buyWall2, history.buyWall3, history.prices], config));
+    const maxVolume = Math.max(depth.sellWalls[0].volume, depth.sellWalls[1].volume, depth.sellWalls[2].volume, depth.buyWalls[0].volume, depth.buyWalls[1].volume, depth.buyWalls[2].volume);
+    const sellBar1 = Math.floor((depth.sellWalls[0].volume * WIDTH) / maxVolume);
+    const sellBar2 = Math.floor((depth.sellWalls[1].volume * WIDTH) / maxVolume);
+    const sellBar3 = Math.floor((depth.sellWalls[2].volume * WIDTH) / maxVolume);
+    const buyBar1 = Math.floor((depth.buyWalls[0].volume * WIDTH) / maxVolume);
+    const buyBar2 = Math.floor((depth.buyWalls[1].volume * WIDTH) / maxVolume);
+    const buyBar3 = Math.floor((depth.buyWalls[2].volume * WIDTH) / maxVolume);
+    console.log();
+    console.log("volume:");
+    console.log(depth.sellWalls[2].price.toString().padEnd(20), drawBar(sellBar1, "red"));
+    console.log(depth.sellWalls[1].price.toString().padEnd(20), drawBar(sellBar2, "red"));
+    console.log(depth.sellWalls[0].price.toString().padEnd(20), drawBar(sellBar3, "red"));
+    console.log(signals.price);
+    console.log(depth.buyWalls[0].price.toString().padEnd(20), drawBar(buyBar1, "green"));
+    console.log(depth.buyWalls[1].price.toString().padEnd(20), drawBar(buyBar2, "green"));
+    console.log(depth.buyWalls[2].price.toString().padEnd(20), drawBar(buyBar3, "green"));
   }
 };
