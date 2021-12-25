@@ -1,0 +1,882 @@
+{
+  "program": {
+    "fileInfos": {
+      "/usr/local/lib/node_modules/typescript/lib/lib.es6.d.ts": {
+        "version": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da",
+        "signature": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "c8665e66018917580e71792b91022bcaf53fb946fab4aaf8dfb0738ed564db88",
+        "signature": "c8665e66018917580e71792b91022bcaf53fb946fab4aaf8dfb0738ed564db88"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
+        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1",
+        "signature": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743",
+        "signature": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843",
+        "signature": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "6994c583b66862deca24d7bbf77297d95b9d3da8160dbd9beef6b847cf7c1376",
+        "signature": "6994c583b66862deca24d7bbf77297d95b9d3da8160dbd9beef6b847cf7c1376"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
+        "version": "4c892766803cef795d73d69aee436dc7a80157163e0cf35e6d0e86917cbd42f3",
+        "signature": "4c892766803cef795d73d69aee436dc7a80157163e0cf35e6d0e86917cbd42f3"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "384f66a3422d80014c51de2682159bb26f1e35854029880ccd5f6d1f00e6a36d",
+        "signature": "384f66a3422d80014c51de2682159bb26f1e35854029880ccd5f6d1f00e6a36d"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0",
+        "signature": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3",
+        "signature": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "4d1f39313a169b8599b8817688f504b56ba8204c2ebafd03f66ff77ddb1899a4",
+        "signature": "4d1f39313a169b8599b8817688f504b56ba8204c2ebafd03f66ff77ddb1899a4"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "7c07d934680d0e33275a44d22fb11a4ff31d46c8c26a8d056828a478753f1efe",
+        "signature": "7c07d934680d0e33275a44d22fb11a4ff31d46c8c26a8d056828a478753f1efe"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
+        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
+        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
+        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
+        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0",
+        "signature": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4",
+        "signature": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f",
+        "signature": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c",
+        "signature": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6",
+        "signature": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
+        "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "42102aaeb1bfec213be1e9777466a6d551eeba8567fed18c0cdbca8c35e3c6e4",
+        "signature": "42102aaeb1bfec213be1e9777466a6d551eeba8567fed18c0cdbca8c35e3c6e4"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0",
+        "signature": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62",
+        "signature": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8",
+        "signature": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8",
+        "signature": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8"
+      },
+      "/usr/local/lib/node_modules/typescript/lib/lib.esnext.bigint.d.ts": {
+        "version": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8",
+        "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/src/models.ts": {
+        "version": "7fa37d1c2ff8d265f86919f2884d831be4ed8001bbc8decccab70873382c5ada",
+        "signature": "53957c719f2bb8a2b436f354cf906a243599ffae1f3d363ed966d11e01411a99"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/src/api.ts": {
+        "version": "8e16a6cfdd05621376700cfed1f4a2288ab66aa95c16589853d1424f9d90588d",
+        "signature": "68c2d45b0ce70fff0b9fd1c53e2c12d1d4a702b30c187067148fdb86a87bfa8f"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/src/main.ts": {
+        "version": "e8d9ec56f3711bac09b9cc504d591d2fda3c39e85bea1e9f292bd944f982ff40",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/src/regression-logic.ts": {
+        "version": "8b76c3fbe0aa83a6e63aca869e550083539147c48470b89f96947b3b597eceb8",
+        "signature": "cfb5552cbe343b35e2a2cee3e203aa19594e25c49e2aa348f53288b31adc66ce"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/src/util.ts": {
+        "version": "29cc43af4fe3c3a6c67b31baa0903ed41e41a3f5049edae93d1fef25ffb4634b",
+        "signature": "fe183a24e48abf01827f65b9d8f81d062de799b885d577c4e9bb0604a07e65c5"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts": {
+        "version": "c7bdc99177a2a94d25fb13722adaaf5b3291bf70b4d1b27584ba189dd3889ba3",
+        "signature": "c7bdc99177a2a94d25fb13722adaaf5b3291bf70b4d1b27584ba189dd3889ba3"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.d.ts": {
+        "version": "d1c92b66c4105659fcad4eb76a1481f7311033e117d0678a1ec545e8ddb8d4c6",
+        "signature": "d1c92b66c4105659fcad4eb76a1481f7311033e117d0678a1ec545e8ddb8d4c6"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts": {
+        "version": "e23424b97418eca3226fd24de079f1203eb70360622e4e093af2aff14d4be6ec",
+        "signature": "e23424b97418eca3226fd24de079f1203eb70360622e4e093af2aff14d4be6ec"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts": {
+        "version": "dee93c07b4df5e26010dc9ec4cdf4d6e4076bb4474d2a8371529217c8b2740a4",
+        "signature": "dee93c07b4df5e26010dc9ec4cdf4d6e4076bb4474d2a8371529217c8b2740a4"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts": {
+        "version": "ed40f2f184db052dc8df62d1f199823c8bbccc487c0a2a7c54eeea0badcf4378",
+        "signature": "ed40f2f184db052dc8df62d1f199823c8bbccc487c0a2a7c54eeea0badcf4378"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts": {
+        "version": "04eaa93bd75f937f9184dcb95a7983800c5770cf8ddd8ac0f3734dc02f5b20ef",
+        "signature": "04eaa93bd75f937f9184dcb95a7983800c5770cf8ddd8ac0f3734dc02f5b20ef"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts": {
+        "version": "c8155caf28fc7b0a564156a5df28ad8a844a3bd32d331d148d8f3ce88025c870",
+        "signature": "c8155caf28fc7b0a564156a5df28ad8a844a3bd32d331d148d8f3ce88025c870"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts": {
+        "version": "45ac321f2e15d268fd74a90ddaa6467dcaaff2c5b13f95b4b85831520fb7a491",
+        "signature": "45ac321f2e15d268fd74a90ddaa6467dcaaff2c5b13f95b4b85831520fb7a491"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts": {
+        "version": "dfc747ab8dd5f623055a4c26fd35e8cceca869fd3f1cf09701c941ca3679665a",
+        "signature": "dfc747ab8dd5f623055a4c26fd35e8cceca869fd3f1cf09701c941ca3679665a"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts": {
+        "version": "c9f5f2920ff61d7158417b8440d5181ddc34a3dfef811a5677dd8a9fb91471e9",
+        "signature": "c9f5f2920ff61d7158417b8440d5181ddc34a3dfef811a5677dd8a9fb91471e9"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/diagnostic_channel.d.ts": {
+        "version": "5cc0a492da3602510b8f5ed1852b1e0390002780d8758fbc8c0cd023ca7085f8",
+        "signature": "5cc0a492da3602510b8f5ed1852b1e0390002780d8758fbc8c0cd023ca7085f8"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts": {
+        "version": "ec7dafafe751a5121f8f1c80201ebe7e7238c47e6329280a73c4d1ca4bb7fa28",
+        "signature": "ec7dafafe751a5121f8f1c80201ebe7e7238c47e6329280a73c4d1ca4bb7fa28"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts": {
+        "version": "64debeb10e4b7ae4ec9e89bfb4e04c6101ab98c3cc806d14e5488607cfec2753",
+        "signature": "64debeb10e4b7ae4ec9e89bfb4e04c6101ab98c3cc806d14e5488607cfec2753"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts": {
+        "version": "2866a528b2708aa272ec3eaafd3c980abb23aec1ef831cfc5eb2186b98c37ce5",
+        "signature": "2866a528b2708aa272ec3eaafd3c980abb23aec1ef831cfc5eb2186b98c37ce5"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts": {
+        "version": "a5782d6cea81fe43d2db7ed41e789458c933ab3ab60602f7b5b14c4da3370496",
+        "signature": "a5782d6cea81fe43d2db7ed41e789458c933ab3ab60602f7b5b14c4da3370496"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts": {
+        "version": "f258ba66915f0196ec344bc53afe1888240bbcc855ebd151b6cc072275533319",
+        "signature": "f258ba66915f0196ec344bc53afe1888240bbcc855ebd151b6cc072275533319"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts": {
+        "version": "6194335ee3353f7226ba31f31d6301d0c6be87228419c0a08976ccd9d4f1213e",
+        "signature": "6194335ee3353f7226ba31f31d6301d0c6be87228419c0a08976ccd9d4f1213e"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts": {
+        "version": "3ac12a54cfaa84683506db8d4cf779135a271d9f0ec18930cf53e61fbeea0c5d",
+        "signature": "3ac12a54cfaa84683506db8d4cf779135a271d9f0ec18930cf53e61fbeea0c5d"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts": {
+        "version": "cf3d3b087d1a8a3355eec47d206162c75e912315b9b5c1cd49fda93e948fb80a",
+        "signature": "cf3d3b087d1a8a3355eec47d206162c75e912315b9b5c1cd49fda93e948fb80a"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts": {
+        "version": "36f316c066c4a72dd6f19fec49a074f935744fc9ccbe75c87ebc07fb2feb9062",
+        "signature": "36f316c066c4a72dd6f19fec49a074f935744fc9ccbe75c87ebc07fb2feb9062"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts": {
+        "version": "42176966283d3835c34278b9b5c0f470d484c0c0c6a55c20a2c916a1ce69b6e8",
+        "signature": "42176966283d3835c34278b9b5c0f470d484c0c0c6a55c20a2c916a1ce69b6e8"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts": {
+        "version": "0cff7901aedfe78e314f7d44088f07e2afa1b6e4f0473a4169b8456ca2fb245d",
+        "signature": "0cff7901aedfe78e314f7d44088f07e2afa1b6e4f0473a4169b8456ca2fb245d"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts": {
+        "version": "ec70fd6f8a9a83f850dab2960a6789e93d5b034b354a16814cad5daabf62a360",
+        "signature": "ec70fd6f8a9a83f850dab2960a6789e93d5b034b354a16814cad5daabf62a360"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts": {
+        "version": "e2236264a811ed1d09a2487a433e8f5216ae62378cf233954ae220cf886f6717",
+        "signature": "e2236264a811ed1d09a2487a433e8f5216ae62378cf233954ae220cf886f6717"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts": {
+        "version": "3ec1e108d587a5661ec790db607f482605ba9f3830e118ce578e3ffa3c42e22b",
+        "signature": "3ec1e108d587a5661ec790db607f482605ba9f3830e118ce578e3ffa3c42e22b"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "100b3bb9d39d2b1b5340f1bf45a52e94ef1692b45232b4ba00fac5c3cc56d331",
+        "signature": "100b3bb9d39d2b1b5340f1bf45a52e94ef1692b45232b4ba00fac5c3cc56d331"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts": {
+        "version": "04fe7e7d8008887943260af1fde2bfd4877e0dc57bf634e0f0b2f3d1794dfd11",
+        "signature": "04fe7e7d8008887943260af1fde2bfd4877e0dc57bf634e0f0b2f3d1794dfd11"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/punycode.d.ts": {
+        "version": "7f77304372efe3c9967e5f9ea2061f1b4bf41dc3cda3c83cdd676f2e5af6b7e6",
+        "signature": "7f77304372efe3c9967e5f9ea2061f1b4bf41dc3cda3c83cdd676f2e5af6b7e6"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts": {
+        "version": "992c6f6be16c0a1d2eec13ece33adeea2c747ba27fcd078353a8f4bb5b4fea58",
+        "signature": "992c6f6be16c0a1d2eec13ece33adeea2c747ba27fcd078353a8f4bb5b4fea58"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts": {
+        "version": "2597718d91e306949d89e285bf34c44192014ef541c3bd7cbb825c022749e974",
+        "signature": "2597718d91e306949d89e285bf34c44192014ef541c3bd7cbb825c022749e974"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts": {
+        "version": "a6b0abdb67d63ebe964ba5fee31bc3daf10c12eecd46b24d778426010c04c67e",
+        "signature": "a6b0abdb67d63ebe964ba5fee31bc3daf10c12eecd46b24d778426010c04c67e"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts": {
+        "version": "ac4801ebc2355ba32329070123b1cd15891bf71b41dcaf9e75b4744832126a59",
+        "signature": "ac4801ebc2355ba32329070123b1cd15891bf71b41dcaf9e75b4744832126a59"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts": {
+        "version": "fd2298fba0640e7295e7bd545e2dfbfcccbb00c27019e501c87965a02bbdebf6",
+        "signature": "fd2298fba0640e7295e7bd545e2dfbfcccbb00c27019e501c87965a02bbdebf6"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/string_decoder.d.ts": {
+        "version": "4fd3c4debadce3e9ab9dec3eb45f7f5e2e3d4ad65cf975a6d938d883cfb25a50",
+        "signature": "4fd3c4debadce3e9ab9dec3eb45f7f5e2e3d4ad65cf975a6d938d883cfb25a50"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts": {
+        "version": "71ddd49185b68f27bfac127ef5d22cb2672c278e53e5370d9020ef50ca9c377d",
+        "signature": "71ddd49185b68f27bfac127ef5d22cb2672c278e53e5370d9020ef50ca9c377d"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts": {
+        "version": "b1ea7a6eaa7608e0e0529aebd323b526a79c6c05a4e519ae5c779675004dcdf1",
+        "signature": "b1ea7a6eaa7608e0e0529aebd323b526a79c6c05a4e519ae5c779675004dcdf1"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts": {
+        "version": "9fcb033a6208485d8f3fadde31eb5cbcaf99149cff3e40c0dc53ebc6d0dff4e9",
+        "signature": "9fcb033a6208485d8f3fadde31eb5cbcaf99149cff3e40c0dc53ebc6d0dff4e9"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/trace_events.d.ts": {
+        "version": "7df562288f949945cf69c21cd912100c2afedeeb7cdb219085f7f4b46cb7dde4",
+        "signature": "7df562288f949945cf69c21cd912100c2afedeeb7cdb219085f7f4b46cb7dde4"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts": {
+        "version": "9d16690485ff1eb4f6fc57aebe237728fd8e03130c460919da3a35f4d9bd97f5",
+        "signature": "9d16690485ff1eb4f6fc57aebe237728fd8e03130c460919da3a35f4d9bd97f5"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts": {
+        "version": "dcc6910d95a3625fd2b0487fda055988e46ab46c357a1b3618c27b4a8dd739c9",
+        "signature": "dcc6910d95a3625fd2b0487fda055988e46ab46c357a1b3618c27b4a8dd739c9"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts": {
+        "version": "f4149f1aa299474c7040a35fe8f8ac2ad078cc1b190415adc1fff3ed52d490ea",
+        "signature": "f4149f1aa299474c7040a35fe8f8ac2ad078cc1b190415adc1fff3ed52d490ea"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts": {
+        "version": "3730099ed008776216268a97771de31753ef71e0a7d0ec650f588cba2a06ce44",
+        "signature": "3730099ed008776216268a97771de31753ef71e0a7d0ec650f588cba2a06ce44"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts": {
+        "version": "8d649dbc429d7139a1d9a14ea2bf8af1dc089e0a879447539587463d4b6c248c",
+        "signature": "8d649dbc429d7139a1d9a14ea2bf8af1dc089e0a879447539587463d4b6c248c"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts": {
+        "version": "60c9e27816ec8ac8df7240598bb086e95b47edfb454c5cbf4003c812e0ed6e39",
+        "signature": "60c9e27816ec8ac8df7240598bb086e95b47edfb454c5cbf4003c812e0ed6e39"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts": {
+        "version": "e361aecf17fc4034b4c122a1564471cdcd22ef3a51407803cb5a5fc020c04d02",
+        "signature": "e361aecf17fc4034b4c122a1564471cdcd22ef3a51407803cb5a5fc020c04d02"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts": {
+        "version": "4926467de88a92a4fc9971d8c6f21b91eca1c0e7fc2a46cc4638ab9440c73875",
+        "signature": "4926467de88a92a4fc9971d8c6f21b91eca1c0e7fc2a46cc4638ab9440c73875"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.global.d.ts": {
+        "version": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1",
+        "signature": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/wasi.d.ts": {
+        "version": "fc0ae4a8ad3c762b96f9d2c3700cb879a373458cb0bf3175478e3b4f85f7ef2f",
+        "signature": "fc0ae4a8ad3c762b96f9d2c3700cb879a373458cb0bf3175478e3b4f85f7ef2f"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts": {
+        "version": "fabbec378e1ddd86fcf2662e716c2b8318acedb664ee3a4cba6f9e8ee8269cf1",
+        "signature": "fabbec378e1ddd86fcf2662e716c2b8318acedb664ee3a4cba6f9e8ee8269cf1"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts": {
+        "version": "55671ef8cbb99697b774df6a3f75d0a914f48544f22d193b9a3e8c47db4ea443",
+        "signature": "55671ef8cbb99697b774df6a3f75d0a914f48544f22d193b9a3e8c47db4ea443"
+      },
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/index.d.ts": {
+        "version": "41d5606aee3473861a0ba1ad628b19a1ed89536d28ae5916308a4559b1b29023",
+        "signature": "41d5606aee3473861a0ba1ad628b19a1ed89536d28ae5916308a4559b1b29023"
+      }
+    },
+    "options": {
+      "module": 1,
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": 2,
+      "sourceMap": true,
+      "outDir": "/Users/jestersimpps/Sites/cryptosignals/server/dist",
+      "baseUrl": "/Users/jestersimpps/Sites/cryptosignals/server/src",
+      "incremental": true,
+      "skipLibCheck": true,
+      "configFilePath": "/Users/jestersimpps/Sites/cryptosignals/server/tsconfig.json"
+    },
+    "referencedMap": {
+      "/users/jestersimpps/sites/cryptosignals/server/src/api.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/src/models.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/src/main.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/src/api.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/src/models.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/src/regression-logic.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/src/models.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/diagnostic_channel.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/punycode.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/string_decoder.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/trace_events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.global.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/wasi.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/index.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "/users/jestersimpps/sites/cryptosignals/server/src/api.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/src/models.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/src/regression-logic.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/src/models.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/diagnostic_channel.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/punycode.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/string_decoder.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/trace_events.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.global.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/wasi.d.ts"
+      ],
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/index.d.ts": [
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts",
+        "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "/usr/local/lib/node_modules/typescript/lib/lib.es6.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es5.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2016.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.dom.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "/usr/local/lib/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/src/models.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/src/api.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/src/regression-logic.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/src/util.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/assert/strict.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/async_hooks.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/buffer.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/child_process.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/cluster.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/console.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/constants.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/crypto.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dgram.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/diagnostic_channel.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/dns/promises.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/domain.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/events.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/fs/promises.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/http2.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/https.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/inspector.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/module.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/net.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/os.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/path.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/perf_hooks.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/process.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/punycode.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/querystring.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/readline.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/repl.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/stream/promises.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/string_decoder.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/timers/promises.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tls.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/trace_events.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/tty.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/url.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/util/types.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/v8.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/vm.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/worker_threads.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/zlib.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/globals.global.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/wasi.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/base.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/assert.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/node_modules/@types/node/ts3.6/index.d.ts",
+      "/users/jestersimpps/sites/cryptosignals/server/src/main.ts"
+    ]
+  },
+  "version": "3.4.5"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "defitrade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "node-binance-api": "^0.13.1",
+    "simple-json-db": "^1.2.3",
+    "technicalindicators": "^3.1.0",
+    "node-telegram-bot-api": "^0.51.0"
+
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.5"
+  }
+}
