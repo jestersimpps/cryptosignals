@@ -17,7 +17,7 @@ export class AiService {
 
   constructor() {}
 
-  calculateSellProfit(rowTimestamp: number, candles: Candle[]) {
+  private calculateSellProfit(rowTimestamp: number, candles: Candle[]) {
     const candle = candles.find((c) => c.time > rowTimestamp);
     if (candle) {
       const priceAtTimeStamp = candle.close;
@@ -30,7 +30,7 @@ export class AiService {
     }
     return null;
   }
-  calculateBuyProfit(rowTimestamp: number, candles: Candle[]) {
+  private calculateBuyProfit(rowTimestamp: number, candles: Candle[]) {
     const candle = candles.find((c) => c.time > rowTimestamp);
     if (candle) {
       const priceAtTimeStamp = candle.close;
@@ -44,10 +44,48 @@ export class AiService {
     return null;
   }
 
+  private async generateTrainedData(candles: Candle[]) {
+    const currentLocalTimeStamp = Date.now();
+    const trainedSellData: number[][] = await getDataRowsFromCsv("trainedSellData");
+    const trainedBuyData: number[][] = await getDataRowsFromCsv("trainedBuyData");
+
+    const inputData: number[][] = await getDataRowsFromCsv("input");
+    for (let index = 0; index < inputData.length; index++) {
+      const row: number[] = inputData[index];
+      const rowTimestamp = row[0];
+
+      if (!trainedSellData.some((r) => r[0] === rowTimestamp)) {
+        if (+rowTimestamp + TIME_BEFORE_PROFIT_CHECK < currentLocalTimeStamp) {
+          const profit = this.calculateSellProfit(+rowTimestamp, candles);
+          if (profit) {
+            const profitRow = [...row, profit];
+            await storeDataRowsToCsv("trainedSellData", [profitRow]);
+          }
+        }
+      }
+      if (!trainedBuyData.some((r) => r[0] === rowTimestamp)) {
+        if (+rowTimestamp + TIME_BEFORE_PROFIT_CHECK < currentLocalTimeStamp) {
+          const profit = this.calculateBuyProfit(+rowTimestamp, candles);
+          if (profit) {
+            const profitRow = [...row, profit];
+            await storeDataRowsToCsv("trainedBuyData", [profitRow]);
+          }
+        }
+      }
+    }
+  }
+
+  private async storeNewInputData(inputs: number[]) {
+    const currentLocalTimeStamp = Date.now();
+    const newRow = [currentLocalTimeStamp, ...inputs];
+    await storeDataRowsToCsv("input", [newRow]);
+    return newRow;
+  }
+
   async train() {
     const sellTrainingData = this.normalizedSellData.map((row) => ({ output: [row.pop()], input: row }));
     const buyTrainingData = this.normalizedBuyData.map((row) => ({ output: [row.pop()], input: row }));
-    
+
     if (sellTrainingData.length && buyTrainingData.length) {
       const config = {
         binaryThresh: 0.5,
@@ -89,54 +127,20 @@ export class AiService {
     }
   }
 
-  async generateTrainedData(candles: Candle[]) {
-    const currentLocalTimeStamp = Date.now();
-    const trainedSellData: number[][] = await getDataRowsFromCsv("trainedSellData");
-    const trainedBuyData: number[][] = await getDataRowsFromCsv("trainedBuyData");
-
-    const inputData: number[][] = await getDataRowsFromCsv("input");
-    for (let index = 0; index < inputData.length; index++) {
-      const row: number[] = inputData[index];
-      const rowTimestamp = row[0];
-
-      if (!trainedSellData.some((r) => r[0] === rowTimestamp)) {
-        if (+rowTimestamp + TIME_BEFORE_PROFIT_CHECK < currentLocalTimeStamp) {
-          const profit = this.calculateSellProfit(+rowTimestamp, candles);
-          if (profit) {
-            const profitRow = [...row, profit];
-            await storeDataRowsToCsv("trainedSellData", [profitRow]);
-          }
-        }
-      }
-      if (!trainedBuyData.some((r) => r[0] === rowTimestamp)) {
-        if (+rowTimestamp + TIME_BEFORE_PROFIT_CHECK < currentLocalTimeStamp) {
-          const profit = this.calculateBuyProfit(+rowTimestamp, candles);
-          if (profit) {
-            const profitRow = [...row, profit];
-            await storeDataRowsToCsv("trainedBuyData", [profitRow]);
-          }
-        }
-      }
-    }
-  }
-
-  async storeNewInputData(inputs: number[]) {
-    const currentLocalTimeStamp = Date.now();
-    const newRow = [currentLocalTimeStamp, ...inputs];
-    await storeDataRowsToCsv("input", [newRow]);
-    return newRow;
-  }
-
   async addDataRow(inputs: number[], candles: Candle[]) {
     await this.generateTrainedData(candles);
     const newRow = await this.storeNewInputData(inputs);
 
     // run neuralnet over row inputs
-    newRow.shift();
-    const normalizedSellInput = linearNormalize({ data: [newRow], maxmin: this.sellMaxMin });
-    const normalizedBuyInput = linearNormalize({ data: [newRow], maxmin: this.buyMaxMin });
-    const nns = this.sellNet.run(normalizedSellInput[0]);
-    const nnb = this.buyNet.run(normalizedBuyInput[0]);
-    console.log(roundNumber(nnb[0] * 100, 0.01), "% buy", roundNumber(nns[0] * 100, 0.01), "% sell");
+    if (this.sellNet && this.buyNet) {
+      newRow.shift();
+      const normalizedSellInput = linearNormalize({ data: [newRow], maxmin: this.sellMaxMin });
+      const normalizedBuyInput = linearNormalize({ data: [newRow], maxmin: this.buyMaxMin });
+      const nns = this.sellNet.run(normalizedSellInput[0]);
+      const nnb = this.buyNet.run(normalizedBuyInput[0]);
+      console.log(roundNumber(nnb[0] * 100, 0.01), "% buy", roundNumber(nns[0] * 100, 0.01), "% sell");
+    } else {
+      console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
+    }
   }
 }

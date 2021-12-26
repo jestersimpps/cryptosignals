@@ -25,15 +25,18 @@ export class SignalService {
       };
       const stoch = Stochastic.calculate(inputStoch);
       const k = getLastElement(stoch, "k");
+      const kValue = k < 0 ? 0 : k > 100 ? 100 : roundNumber(k, 0.01);
       const d = getLastElement(stoch, "d");
+      const dValue = d < 0 ? 0 : d > 100 ? 100 : roundNumber(d, 0.01);
+      
       stochObject[timeFrame] = {
         k: {
-          value: k < 0 ? 0 : k > 100 ? 100 : roundNumber(k, 0.01),
+          value: kValue,
           color: numberToGreenRedColor(100 - k, 0, 100),
           angle: calculateAngleOfChange(stoch.map((s) => s.k)),
         },
         d: {
-          value: d < 0 ? 0 : d > 100 ? 100 : roundNumber(d, 0.01),
+          value: dValue,
           color: numberToGreenRedColor(100 - d, 0, 100),
           angle: calculateAngleOfChange(stoch.map((s) => s.d)),
         },
