@@ -1,13 +1,11 @@
 import { SignalService } from "./signal.service";
 import { ApiService } from "./api.service";
-import { CandlesObject, DepthObject } from "./models";
+import { CandlesObject, DepthObject, Signals } from "./models";
 import { stochOutput, wallsOutput } from "./output";
-const prompts = require("prompts");
+import { AiService } from "./ai.service";
 
+const prompts = require("prompts");
 const pair = "MATICUSDT";
-const signalService = new SignalService();
-const apiService = new ApiService();
-let signals;
 
 const init = async () => {
   const response = await prompts([
@@ -18,24 +16,71 @@ const init = async () => {
       choices: [
         { title: "MTF Stochs", value: 1 },
         { title: "Walls", value: 2 },
+        { title: "Run Neural Net", value: 3 },
       ],
       initial: 1,
     },
   ]);
   switch (response.value) {
     case 1:
-      apiService.chartListener(pair, (candlesObject: CandlesObject) => {
-        signals = signalService.calculateSignals(pair, candlesObject);
-        stochOutput(signals);
-      });
+      {
+        const apiService = new ApiService();
+        const signalService = new SignalService();
+        apiService.chartListener(pair, (candlesObject: CandlesObject) => {
+          const signals = signalService.calculateSignals(pair, candlesObject);
+          stochOutput(signals);
+        });
+      }
       break;
+
     case 2:
-      apiService.chartListener(pair, (candlesObject: CandlesObject) => {
-        signals = signalService.calculateSignals(pair, candlesObject);
-      });
-      apiService.depthListener(pair, (depthObject: DepthObject) => {
-        wallsOutput(depthObject, signals);
-      });
+      {
+        const signalService = new SignalService();
+        const apiService = new ApiService();
+        let signals;
+        apiService.chartListener(pair, (candlesObject: CandlesObject) => {
+          signals = signalService.calculateSignals(pair, candlesObject);
+        });
+        apiService.depthListener(pair, (depthObject: DepthObject) => {
+          wallsOutput(depthObject, signals);
+        });
+      }
+      break;
+
+    case 3:
+      {
+        const aiService = new AiService();
+        const signalService = new SignalService();
+        const apiService = new ApiService();
+
+        await aiService.normalizeTrained();
+        await aiService.train();
+
+        apiService.chartListener(pair, (candlesObject: CandlesObject) => {
+          const signals: Signals = signalService.calculateSignals(pair, candlesObject);
+          const inputs = [
+            signals.stoch.t1m.k.value,
+            signals.stoch.t1m.k.angle,
+            signals.stoch.t1m.d.value,
+            signals.stoch.t1m.d.angle,
+
+            signals.stoch.t5m.k.value,
+            signals.stoch.t5m.k.angle,
+            signals.stoch.t5m.d.value,
+            signals.stoch.t5m.d.angle,
+
+            signals.stoch.t15m.k.value,
+            signals.stoch.t15m.k.angle,
+            signals.stoch.t15m.d.value,
+            signals.stoch.t15m.d.angle,
+          ];
+          if (candlesObject.t1m.length) {
+            aiService.addDataRow(inputs, candlesObject.t1m);
+          }
+        });
+      }
+      break;
+
     default:
       break;
   }

@@ -28,12 +28,12 @@ export class SignalService {
       const d = getLastElement(stoch, "d");
       stochObject[timeFrame] = {
         k: {
-          value: roundNumber(k, 0.01),
+          value: k < 0 ? 0 : k > 100 ? 100 : roundNumber(k, 0.01),
           color: numberToGreenRedColor(100 - k, 0, 100),
           angle: calculateAngleOfChange(stoch.map((s) => s.k)),
         },
         d: {
-          value: roundNumber(d, 0.01),
+          value: d < 0 ? 0 : d > 100 ? 100 : roundNumber(d, 0.01),
           color: numberToGreenRedColor(100 - d, 0, 100),
           angle: calculateAngleOfChange(stoch.map((s) => s.d)),
         },

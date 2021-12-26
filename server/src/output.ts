@@ -76,6 +76,7 @@ export const stochOutput = (signals: Signals) => {
 };
 
 export const wallsOutput = (depth: DepthObject, signals: Signals) => {
+  // TODO refactor
   const WIDTH = 60;
   if (depth.buyWalls.length && depth.sellWalls.length) {
     history.prices = [...history.prices, signals.price];
@@ -121,7 +122,6 @@ export const wallsOutput = (depth: DepthObject, signals: Signals) => {
     const buyBar1 = Math.floor((depth.buyWalls[0].volume * WIDTH) / maxVolume);
     const buyBar2 = Math.floor((depth.buyWalls[1].volume * WIDTH) / maxVolume);
     const buyBar3 = Math.floor((depth.buyWalls[2].volume * WIDTH) / maxVolume);
-    console.log();
     console.log("volume:");
     console.log(depth.sellWalls[2].price.toString().padEnd(20), drawBar(sellBar1, "red"));
     console.log(depth.sellWalls[1].price.toString().padEnd(20), drawBar(sellBar2, "red"));

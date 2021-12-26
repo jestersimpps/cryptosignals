@@ -58,7 +58,7 @@ export class ApiService {
     setInterval(() => returnCandlesObject(candlesObject), UPDATE_TIME);
   };
 
-  depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 5) => {
+  depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 7) => {
     const UPDATE_TIME = 1000;
     let depthObject: DepthObject = {
       buyWalls: [],
