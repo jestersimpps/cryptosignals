@@ -119,7 +119,6 @@ export class AiService {
       this.sellMaxMin = getMaxMin(sellData);
       console.log(this.sellMaxMin);
       this.normalizedSellData = linearNormalize({ data: sellData, maxmin: this.sellMaxMin });
-
       buyData.forEach((row) => row.shift());
       this.buyMaxMin = getMaxMin(buyData);
       console.log(this.buyMaxMin);

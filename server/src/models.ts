@@ -48,6 +48,7 @@ export interface StochObject {
 
 export interface Signals {
   price: number;
+  volume: number;
   stoch: StochObject;
 }
 

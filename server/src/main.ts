@@ -63,16 +63,25 @@ const init = async () => {
             signals.stoch.t1m.k.angle,
             signals.stoch.t1m.d.value,
             signals.stoch.t1m.d.angle,
+            signals.stoch.t1m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
 
             signals.stoch.t5m.k.value,
             signals.stoch.t5m.k.angle,
             signals.stoch.t5m.d.value,
             signals.stoch.t5m.d.angle,
+            signals.stoch.t5m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
 
             signals.stoch.t15m.k.value,
             signals.stoch.t15m.k.angle,
             signals.stoch.t15m.d.value,
             signals.stoch.t15m.d.angle,
+            signals.stoch.t15m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+
+            signals.stoch.t1h.k.value,
+            signals.stoch.t1h.k.angle,
+            signals.stoch.t1h.d.value,
+            signals.stoch.t1h.d.angle,
+            signals.stoch.t1h.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
           ];
           if (candlesObject.t1m.length) {
             aiService.addDataRow(inputs, candlesObject.t1m);

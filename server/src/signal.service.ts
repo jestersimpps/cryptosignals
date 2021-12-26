@@ -28,7 +28,7 @@ export class SignalService {
       const kValue = k < 0 ? 0 : k > 100 ? 100 : roundNumber(k, 0.01);
       const d = getLastElement(stoch, "d");
       const dValue = d < 0 ? 0 : d > 100 ? 100 : roundNumber(d, 0.01);
-      
+
       stochObject[timeFrame] = {
         k: {
           value: kValue,
@@ -50,6 +50,7 @@ export class SignalService {
   calculateSignals(pair: string, candlesObject: CandlesObject): Signals {
     return {
       price: candlesObject.t1m.length ? candlesObject.t1m[candlesObject.t1m.length - 1].close : null,
+      volume: candlesObject.t1m.length ? candlesObject.t1m[candlesObject.t1m.length - 1].volume : null,
       stoch: this.calculateStoch(pair, candlesObject),
     };
   }

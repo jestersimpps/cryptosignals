@@ -35,7 +35,7 @@ const nonLinearDeNormalize = ({ data, maxmin, a = 1 }) => {
   return enumeration(data, maxmin, callback);
 };
 
-const transpose = m => m[0].map((x, i) => m.map(x => x[i]));
+const transpose = (m) => m[0].map((x, i) => m.map((x) => x[i]));
 
 /**
  * Generate new matrix with 0 in value
@@ -105,7 +105,7 @@ export const linearDeNormalize = ({ data, maxmin }) => {
  * default: normalizeInput
  */
 export const linearNormalize = ({ data, maxmin }): number[][] => {
-  const callback = ({ max, min, el }) => (el - min) / (max - min);
+  const callback = ({ max, min, el }) => (max - min === 0 ? 0 : (el - min) / (max - min));
 
   return data ? enumeration(data, maxmin, callback) : [];
 };
