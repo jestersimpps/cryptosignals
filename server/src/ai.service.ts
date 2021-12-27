@@ -6,6 +6,7 @@ const brain = require("brain.js");
 
 const CANDLES_BEFORE_PROFIT = 30;
 const TIME_BEFORE_PROFIT_CHECK = 60 * 1000 * CANDLES_BEFORE_PROFIT;
+const TRAIN_EVERY_X = 60 * 1000;
 
 export class AiService {
   sellNet;
@@ -14,8 +15,14 @@ export class AiService {
   buyMaxMin: { max: number; min: number }[] = [];
   normalizedSellData = [];
   normalizedBuyData = [];
+  trainCounter = 0;
 
-  constructor() {}
+  constructor() {
+    setInterval(async () => {
+      await this.normalizeTrained();
+      await this.train();
+    }, TRAIN_EVERY_X);
+  }
 
   private calculateSellProfit(rowTimestamp: number, candles: Candle[]) {
     const candle = candles.find((c) => c.time > rowTimestamp);
@@ -96,7 +103,7 @@ export class AiService {
       const trainingOptions = {
         iterations: 20000, // the maximum times to iterate the training data --> number greater than 0
         errorThresh: 0.005, // the acceptable error percentage from training data --> number between 0 and 1
-        log: true, // true to use console.log, when a function is supplied it is used --> Either true or a function
+        log: false, // true to use console.log, when a function is supplied it is used --> Either true or a function
         logPeriod: 10, // iterations between logging out --> number greater than 0
         learningRate: 0.3, // scales with delta to effect training rate --> number between 0 and 1
         momentum: 0.1, // scales with next layer's change value --> number between 0 and 1
@@ -117,11 +124,11 @@ export class AiService {
     if (sellData.length && buyData.length) {
       sellData.forEach((row) => row.shift());
       this.sellMaxMin = getMaxMin(sellData);
-      console.log(this.sellMaxMin);
+      // console.log(this.sellMaxMin);
       this.normalizedSellData = linearNormalize({ data: sellData, maxmin: this.sellMaxMin });
       buyData.forEach((row) => row.shift());
       this.buyMaxMin = getMaxMin(buyData);
-      console.log(this.buyMaxMin);
+      // console.log(this.buyMaxMin);
       this.normalizedBuyData = linearNormalize({ data: buyData, maxmin: this.buyMaxMin });
     }
   }
@@ -135,11 +142,13 @@ export class AiService {
       newRow.shift();
       const normalizedSellInput = linearNormalize({ data: [newRow], maxmin: this.sellMaxMin });
       const normalizedBuyInput = linearNormalize({ data: [newRow], maxmin: this.buyMaxMin });
-      const nns = this.sellNet.run(normalizedSellInput[0]);
-      const nnb = this.buyNet.run(normalizedBuyInput[0]);
-      console.log(roundNumber(nnb[0] * 100, 0.01), "% buy", roundNumber(nns[0] * 100, 0.01), "% sell");
-    } else {
-      console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
+      if ([...normalizedBuyInput, ...normalizedBuyInput].filter((e) => e.toString().indexOf("NaN") > -1).filter((e) => e.toString().indexOf("Infinity") > -1).length === 0) {
+        const nns = this.sellNet.run(normalizedSellInput[0]);
+        const nnb = this.buyNet.run(normalizedBuyInput[0]);
+        console.log(roundNumber(nnb[0] * 100, 0.001), "% buy", roundNumber(nns[0] * 100, 0.001), "% sell");
+      } else {
+        console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
+      }
     }
   }
 }

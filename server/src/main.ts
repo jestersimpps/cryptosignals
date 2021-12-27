@@ -64,28 +64,38 @@ const init = async () => {
             signals.stoch.t1m.d.value,
             signals.stoch.t1m.d.angle,
             signals.stoch.t1m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+            signals.rsi.t1m,
+            signals.roc.t1m,
+            signals.adx.t1m.adx,
 
             signals.stoch.t5m.k.value,
             signals.stoch.t5m.k.angle,
             signals.stoch.t5m.d.value,
             signals.stoch.t5m.d.angle,
             signals.stoch.t5m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+            signals.rsi.t5m,
+            signals.roc.t5m,
+            signals.adx.t5m.adx,
 
             signals.stoch.t15m.k.value,
             signals.stoch.t15m.k.angle,
             signals.stoch.t15m.d.value,
             signals.stoch.t15m.d.angle,
             signals.stoch.t15m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+            signals.rsi.t15m,
+            signals.roc.t15m,
+            signals.adx.t15m.adx,
 
             signals.stoch.t1h.k.value,
             signals.stoch.t1h.k.angle,
             signals.stoch.t1h.d.value,
             signals.stoch.t1h.d.angle,
             signals.stoch.t1h.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+            signals.rsi.t1h,
+            signals.roc.t1h,
+            signals.adx.t1h.adx,
           ];
-          if (candlesObject.t1m.length) {
-            aiService.addDataRow(inputs, candlesObject.t1m);
-          }
+          aiService.addDataRow(inputs, candlesObject.t1m);
         });
       }
       break;

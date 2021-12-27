@@ -55,7 +55,10 @@ export class ApiService {
       candlesObject.t1d = this.mapChartObject(chart);
     });
 
-    setInterval(() => returnCandlesObject(candlesObject), UPDATE_TIME);
+    setInterval(() => {
+      const timeFrameArray = Object.keys(candlesObject);
+      if (timeFrameArray.every((tf) => candlesObject[tf].length)) returnCandlesObject(candlesObject);
+    }, UPDATE_TIME);
   };
 
   depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 7) => {

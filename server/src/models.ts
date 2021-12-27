@@ -46,10 +46,49 @@ export interface StochObject {
   t1d: SingleStochObject;
 }
 
+export interface SingleAdxObject {
+  adx: number;
+  pdi: number;
+  mdi: number;
+}
+export interface AdxObject {
+  t1m: SingleAdxObject;
+  t5m: SingleAdxObject;
+  t15m: SingleAdxObject;
+  t30m: SingleAdxObject;
+  t1h: SingleAdxObject;
+  t2h: SingleAdxObject;
+  t4h: SingleAdxObject;
+  t1d: SingleAdxObject;
+}
+
+export interface RocObject {
+  t1m: number;
+  t5m: number;
+  t15m: number;
+  t30m: number;
+  t1h: number;
+  t2h: number;
+  t4h: number;
+  t1d: number;
+}
+export interface RsiObject {
+  t1m: number;
+  t5m: number;
+  t15m: number;
+  t30m: number;
+  t1h: number;
+  t2h: number;
+  t4h: number;
+  t1d: number;
+}
 export interface Signals {
   price: number;
   volume: number;
   stoch: StochObject;
+  adx: AdxObject;
+  rsi: RsiObject;
+  roc: RocObject;
 }
 
 export interface DepthObject {
