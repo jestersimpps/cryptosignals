@@ -17,8 +17,7 @@ export class ApiService {
       volume: +chart[k]["volume"],
     }));
 
-  chartListener = (pair: string, returnCandlesObject: (candlesObject: CandlesObject) => void) => {
-    const UPDATE_TIME = 1000;
+  chartListener = (pair: string, returnCandlesObject: (candlesObject: CandlesObject) => void, interval = 1000) => {
     let candlesObject: CandlesObject = {
       t1m: [],
       t5m: [],
@@ -58,11 +57,10 @@ export class ApiService {
     setInterval(() => {
       const timeFrameArray = Object.keys(candlesObject);
       if (timeFrameArray.every((tf) => candlesObject[tf].length)) returnCandlesObject(candlesObject);
-    }, UPDATE_TIME);
+    }, interval);
   };
 
-  depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 7) => {
-    const UPDATE_TIME = 1000;
+  depthListener = (pair: string, returnDepthObject: (depthObject: DepthObject) => void, numberOfWalls = 7, interval = 1000) => {
     let depthObject: DepthObject = {
       buyWalls: [],
       sellWalls: [],
@@ -97,6 +95,6 @@ export class ApiService {
       };
     });
 
-    setInterval(() => returnDepthObject(depthObject), UPDATE_TIME);
+    setInterval(() => returnDepthObject(depthObject), interval);
   };
 }

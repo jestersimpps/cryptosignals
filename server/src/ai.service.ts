@@ -6,7 +6,7 @@ const brain = require("brain.js");
 
 const CANDLES_BEFORE_PROFIT = 30;
 const TIME_BEFORE_PROFIT_CHECK = 60 * 1000 * CANDLES_BEFORE_PROFIT;
-const TRAIN_EVERY_X = 60 * 1000;
+const TRAIN_EVERY_X = 5 * 60 * 1000;
 
 export class AiService {
   sellNet;
