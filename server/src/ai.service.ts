@@ -6,7 +6,7 @@ const brain = require("brain.js");
 
 const CANDLES_BEFORE_PROFIT = 30;
 const TIME_BEFORE_PROFIT_CHECK = 60 * 1000 * CANDLES_BEFORE_PROFIT;
-const TRAIN_EVERY_X = 5 * 60 * 1000;
+const TRAIN_EVERY_X = 15 * 60 * 1000;
 
 export class AiService {
   sellNet;
@@ -145,7 +145,7 @@ export class AiService {
       if ([...normalizedBuyInput, ...normalizedBuyInput].filter((e) => e.toString().indexOf("NaN") > -1).filter((e) => e.toString().indexOf("Infinity") > -1).length === 0) {
         const nns = this.sellNet.run(normalizedSellInput[0]);
         const nnb = this.buyNet.run(normalizedBuyInput[0]);
-        console.log(roundNumber(nnb[0] * 100, 0.001), "% buy", roundNumber(nns[0] * 100, 0.001), "% sell");
+        console.log( "buy%:",roundNumber(nnb[0] * 100, 0.001), "sell%:", roundNumber(nns[0] * 100, 0.001), );
       } else {
         console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
       }

@@ -50,6 +50,42 @@ export class SignalService {
     return stochObject;
   }
 
+  private calculateStochPriceDiff(candlesObject: CandlesObject): StochObject {
+    const timeFrameArray = Object.keys(candlesObject);
+    let stochObject = {} as StochObject;
+
+    for (const timeFrame of timeFrameArray) {
+      const input = {
+        high: candlesObject[timeFrame].map((t: Candle) => t.high),
+        low: candlesObject[timeFrame].map((t: Candle) => t.low),
+        close: candlesObject[timeFrame].map((t: Candle) => t.close),
+        period: TIMEFRAME,
+        signalPeriod: 6,
+      };
+      const stoch = Stochastic.calculate(input);
+      const k = getLastElement(stoch, "k");
+      const kValue = k < 0 ? 0 : k > 100 ? 100 : roundNumber(k, 0.01);
+      const d = getLastElement(stoch, "d");
+      const dValue = d < 0 ? 0 : d > 100 ? 100 : roundNumber(d, 0.01);
+
+      stochObject[timeFrame] = {
+        k: {
+          value: kValue,
+          color: numberToGreenRedColor(100 - k, 0, 100),
+          angle: calculateAngleOfChange(stoch.map((s) => s.k)),
+        },
+        d: {
+          value: dValue,
+          color: numberToGreenRedColor(100 - d, 0, 100),
+          angle: calculateAngleOfChange(stoch.map((s) => s.d)),
+        },
+        cross: getCross(stoch),
+      };
+    }
+
+    return stochObject;
+  }
+
   private calculateAdx(candlesObject: CandlesObject): AdxObject {
     const timeFrameArray = Object.keys(candlesObject);
     let adxObject = {} as AdxObject;

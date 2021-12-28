@@ -91,7 +91,7 @@ const init = async () => {
             ];
             aiService.addDataRow(inputs, candlesObject.t1m);
           },
-          10 * 1000
+          60 * 1000 
         );
       }
       break;
