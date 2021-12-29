@@ -107,11 +107,11 @@ const init = async () => {
             const result = await aiService.runNet(inputs);
             if (result.nnb > 60 && result.nns < 5) {
               // potential buy
-              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `Potential BUY for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `BUY ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
             }
             if (result.nns > 60 && result.nnb < 5) {
               // potential sell
-              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `Potential SELL for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `SELL ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
             }
           },
           1000
