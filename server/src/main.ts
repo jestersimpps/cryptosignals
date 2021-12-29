@@ -7,6 +7,7 @@ import { sendPrivateTelegramMessage } from "./telegram-api";
 
 const prompts = require("prompts");
 const PAIR = "MATICUSDT";
+const TELEGRAM_GROUP_ID = "-799174803";
 
 const generateInputs = (signals: Signals) => [
   signals.stoch.t1m.k.value,
@@ -106,11 +107,11 @@ const init = async () => {
             const result = await aiService.runNet(inputs);
             if (result.nnb > 60 && result.nns < 5) {
               // potential buy
-              sendPrivateTelegramMessage("-799174803", `Potential BUY for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `Potential BUY for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
             }
             if (result.nns > 60 && result.nnb < 5) {
               // potential sell
-              sendPrivateTelegramMessage("-799174803", `Potential SELL for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `Potential SELL for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
             }
           },
           1000
