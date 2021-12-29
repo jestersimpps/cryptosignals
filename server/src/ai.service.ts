@@ -81,13 +81,13 @@ export class AiService {
       const newBuyNet = new brain.NeuralNetwork(config);
       const newSellNet = new brain.NeuralNetwork(config);
 
-      await newSellNet.trainAsync(sellTrainingData, trainingOptions);
-      await newBuyNet.trainAsync(buyTrainingData, trainingOptions);
-      
+      const sellError = await newSellNet.trainAsync(sellTrainingData, trainingOptions);
+      const buyError = await newBuyNet.trainAsync(buyTrainingData, trainingOptions);
+
       this.sellNet = newSellNet;
       this.buyNet = newBuyNet;
 
-      console.log("trainedSellNet", this.sellNet, "trainedBuyNet", this.buyNet);
+      console.log("trainedSellNet", sellError, "trainedBuyNet", buyError);
     }
   }
 
