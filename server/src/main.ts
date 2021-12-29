@@ -8,6 +8,8 @@ import { sendPrivateTelegramMessage } from "./telegram-api";
 const prompts = require("prompts");
 const PAIR = "MATICUSDT";
 const TELEGRAM_GROUP_ID = "-799174803";
+let lastMessage = null;
+const LAST_MESSAGE_TIMEOUT = 5 * 60 * 1000;
 
 const generateInputs = (signals: Signals) => [
   signals.stoch.t1m.k.value,
@@ -105,13 +107,16 @@ const init = async () => {
             const signals: Signals = signalService.calculateSignals(PAIR, candlesObject);
             const inputs = generateInputs(signals);
             const result = await aiService.runNet(inputs);
-            if (result.nnb > 60 && result.nns < 5) {
-              // potential buy
-              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `BUY ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
-            }
-            if (result.nns > 60 && result.nnb < 5) {
-              // potential sell
-              sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `SELL ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
+            if (!lastMessage || lastMessage + LAST_MESSAGE_TIMEOUT < Date.now()) {
+              if (result.nnb > 60 && result.nns < 10) {
+                // potential buy
+                sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `BUY ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
+              }
+              if (result.nns > 60 && result.nnb < 10) {
+                // potential sell
+                sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `SELL ${PAIR} at ${signals.price} - buy%: ${result.nnb} sell%: ${result.nns}`);
+              }
+              lastMessage = Date.now();
             }
           },
           1000

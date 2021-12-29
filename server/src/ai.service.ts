@@ -70,7 +70,7 @@ export class AiService {
         leakyReluAlpha: 0.01, // supported for activation type 'leaky-relu'
       };
       const trainingOptions = {
-        iterations: 10000, // the maximum times to iterate the training data --> number greater than 0
+        iterations: 20000, // the maximum times to iterate the training data --> number greater than 0
         errorThresh: 0.005, // the acceptable error percentage from training data --> number between 0 and 1
         log: true, // true to use console.log, when a function is supplied it is used --> Either true or a function
         logPeriod: 10, // iterations between logging out --> number greater than 0
@@ -145,9 +145,9 @@ export class AiService {
       const normalizedSellInput = linearNormalize({ data: [inputs], maxmin: this.sellMaxMin });
       const normalizedBuyInput = linearNormalize({ data: [inputs], maxmin: this.buyMaxMin });
       if ([...normalizedBuyInput, ...normalizedBuyInput].filter((e) => e.toString().indexOf("NaN") > -1).filter((e) => e.toString().indexOf("Infinity") > -1).length === 0) {
-        const nns = this.sellNet.run(normalizedSellInput[0])[0];
-        const nnb = this.buyNet.run(normalizedBuyInput[0])[0];
-        console.log("buy%:", roundNumber(nnb * 100, 0.001), "sell%:", roundNumber(nns * 100, 0.001));
+        const nns = +this.sellNet.run(normalizedSellInput[0])[0] * 100;
+        const nnb = +this.buyNet.run(normalizedBuyInput[0])[0] * 100;
+        console.log("buy%:", roundNumber(nnb, 0.001), "sell%:", roundNumber(nns, 0.001));
         return { nns, nnb };
       } else {
         console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
