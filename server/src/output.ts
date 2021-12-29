@@ -12,13 +12,14 @@ let history = {
 };
 const chalk = require("chalk");
 
-const mid = "\u25B6";
-const up = "\u25B2";
-const midup = "\u25E5";
-const down = "\u25BC";
-const middown = "\u25E2";
-
 const getAngleSymbol = (angle: number) => {
+  const mid = "\u25B6";
+  const up = "\u25B2";
+  const midup = "\u25E5";
+  const down = "\u25BC";
+  const middown = "\u25E2";
+  const error = "*";
+
   if (angle < 45) {
     return up;
   }
@@ -34,6 +35,7 @@ const getAngleSymbol = (angle: number) => {
   if (angle >= 110) {
     return down;
   }
+  return error;
 };
 
 const drawBar = (width: number, color: "red" | "green") => {
@@ -48,7 +50,8 @@ const drawBar = (width: number, color: "red" | "green") => {
 
   return bar;
 };
-export const stochOutput = (signals: Signals) => {
+
+export const stochOutput = (signals: Signals, net?: { nns: number; nnb: number }) => {
   let output = `${signals.price} - `;
 
   Object.keys(signals.stoch).map((key) => {

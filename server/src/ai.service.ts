@@ -134,7 +134,7 @@ export class AiService {
     }
   }
 
-  async runNet(inputs: number[]) {
+  async runNet(inputs: number[]): Promise<{ nns: number; nnb: number }> {
     // run neuralnet over row inputs
     if (this.sellNet && this.buyNet) {
       const normalizedSellInput = linearNormalize({ data: [inputs], maxmin: this.sellMaxMin });
@@ -143,9 +143,11 @@ export class AiService {
         const nns = this.sellNet.run(normalizedSellInput[0]);
         const nnb = this.buyNet.run(normalizedBuyInput[0]);
         console.log("buy%:", roundNumber(nnb[0] * 100, 0.001), "sell%:", roundNumber(nns[0] * 100, 0.001));
+        return { nns, nnb };
       } else {
         console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
       }
     }
+    return { nns: null, nnb: null };
   }
 }

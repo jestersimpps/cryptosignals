@@ -99,7 +99,7 @@ const init = async () => {
         // run net
         apiService.chartListener(
           pair,
-          (candlesObject: CandlesObject) => {
+          async (candlesObject: CandlesObject) => {
             const signals: Signals = signalService.calculateSignals(pair, candlesObject);
             const inputs = generateInputs(signals);
             aiService.runNet(inputs);
