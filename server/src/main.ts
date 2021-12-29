@@ -3,9 +3,10 @@ import { ApiService } from "./api.service";
 import { CandlesObject, DepthObject, Signals } from "./models";
 import { stochOutput, wallsOutput } from "./output";
 import { AiService } from "./ai.service";
+import { sendPrivateTelegramMessage } from "./telegram-api";
 
 const prompts = require("prompts");
-const pair = "MATICUSDT";
+const PAIR = "MATICUSDT";
 
 const generateInputs = (signals: Signals) => [
   signals.stoch.t1m.k.value,
@@ -56,8 +57,8 @@ const init = async () => {
       {
         const apiService = new ApiService();
         const signalService = new SignalService();
-        apiService.chartListener(pair, (candlesObject: CandlesObject) => {
-          const signals = signalService.calculateSignals(pair, candlesObject);
+        apiService.chartListener(PAIR, (candlesObject: CandlesObject) => {
+          const signals = signalService.calculateSignals(PAIR, candlesObject);
           stochOutput(signals);
         });
       }
@@ -68,10 +69,10 @@ const init = async () => {
         const signalService = new SignalService();
         const apiService = new ApiService();
         let signals;
-        apiService.chartListener(pair, (candlesObject: CandlesObject) => {
-          signals = signalService.calculateSignals(pair, candlesObject);
+        apiService.chartListener(PAIR, (candlesObject: CandlesObject) => {
+          signals = signalService.calculateSignals(PAIR, candlesObject);
         });
-        apiService.depthListener(pair, (depthObject: DepthObject) => {
+        apiService.depthListener(PAIR, (depthObject: DepthObject) => {
           wallsOutput(depthObject, signals);
         });
       }
@@ -88,9 +89,9 @@ const init = async () => {
 
         // add training data
         apiService.chartListener(
-          pair,
+          PAIR,
           (candlesObject: CandlesObject) => {
-            const signals: Signals = signalService.calculateSignals(pair, candlesObject);
+            const signals: Signals = signalService.calculateSignals(PAIR, candlesObject);
             const inputs = generateInputs(signals);
             aiService.addDataRow(inputs, candlesObject.t1m);
           },
@@ -98,11 +99,19 @@ const init = async () => {
         );
         // run net
         apiService.chartListener(
-          pair,
+          PAIR,
           async (candlesObject: CandlesObject) => {
-            const signals: Signals = signalService.calculateSignals(pair, candlesObject);
+            const signals: Signals = signalService.calculateSignals(PAIR, candlesObject);
             const inputs = generateInputs(signals);
-            aiService.runNet(inputs);
+            const result = await aiService.runNet(inputs);
+            if (result.nnb > 60 && result.nns < 5) {
+              // potential buy
+              sendPrivateTelegramMessage("-799174803", `Potential BUY for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+            }
+            if (result.nns > 60 && result.nnb < 5) {
+              // potential sell
+              sendPrivateTelegramMessage("-799174803", `Potential SELL for ${PAIR} buy%: ${result.nnb} sell%: ${result.nns}`);
+            }
           },
           1000
         );
