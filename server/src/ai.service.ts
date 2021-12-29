@@ -147,7 +147,7 @@ export class AiService {
       if ([...normalizedBuyInput, ...normalizedBuyInput].filter((e) => e.toString().indexOf("NaN") > -1).filter((e) => e.toString().indexOf("Infinity") > -1).length === 0) {
         const nns = this.sellNet.run(normalizedSellInput[0])[0];
         const nnb = this.buyNet.run(normalizedBuyInput[0])[0];
-        console.log("buy%:", roundNumber(nnb[0] * 100, 0.001), "sell%:", roundNumber(nns[0] * 100, 0.001));
+        console.log("buy%:", roundNumber(nnb * 100, 0.001), "sell%:", roundNumber(nns * 100, 0.001));
         return { nns, nnb };
       } else {
         console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
