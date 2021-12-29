@@ -72,17 +72,22 @@ export class AiService {
       const trainingOptions = {
         iterations: 20000, // the maximum times to iterate the training data --> number greater than 0
         errorThresh: 0.005, // the acceptable error percentage from training data --> number between 0 and 1
-        log: false, // true to use console.log, when a function is supplied it is used --> Either true or a function
+        log: true, // true to use console.log, when a function is supplied it is used --> Either true or a function
         logPeriod: 10, // iterations between logging out --> number greater than 0
         learningRate: 0.3, // scales with delta to effect training rate --> number between 0 and 1
         momentum: 0.1, // scales with next layer's change value --> number between 0 and 1
         timeout: Infinity, // the max number of milliseconds to train for --> number greater than 0
       };
-      this.sellNet = new brain.NeuralNetwork(config);
-      this.buyNet = new brain.NeuralNetwork(config);
-      const trainedSellNet = await this.sellNet.trainAsync(sellTrainingData, trainingOptions);
-      const trainedBuyNet = await this.buyNet.trainAsync(buyTrainingData, trainingOptions);
-      console.log("trainedSellNet", trainedSellNet, "trainedBuyNet", trainedBuyNet);
+      const newBuyNet = new brain.NeuralNetwork(config);
+      const newSellNet = new brain.NeuralNetwork(config);
+
+      await newSellNet.trainAsync(sellTrainingData, trainingOptions);
+      await newBuyNet.trainAsync(buyTrainingData, trainingOptions);
+      
+      this.sellNet = newSellNet;
+      this.buyNet = newBuyNet;
+
+      console.log("trainedSellNet", this.sellNet, "trainedBuyNet", this.buyNet);
     }
   }
 
