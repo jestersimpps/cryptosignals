@@ -1,12 +1,11 @@
 import { getMaxMin, linearNormalize } from "./normalizer";
 import { clearData, getDataRowsFromCsv, storeDataRowsToCsv } from "./file-helper";
 import { Candle } from "./models";
-import { roundNumber } from "./util";
 const brain = require("brain.js");
 
-const CANDLES_BEFORE_PROFIT = 30;
+const CANDLES_BEFORE_PROFIT = 60;
 const TIME_BEFORE_PROFIT_CHECK = 60 * 1000 * CANDLES_BEFORE_PROFIT;
-const TRAIN_EVERY_X = 60 * 60 * 1000;
+const TRAIN_EVERY_X = 2 * 60 * 60 * 1000;
 
 export class AiService {
   sellNet;
@@ -65,7 +64,7 @@ export class AiService {
     if (sellTrainingData.length && buyTrainingData.length) {
       const config = {
         binaryThresh: 0.5,
-        hiddenLayers: [7, 5, 3], // array of ints for the sizes of the hidden layers in the network
+        hiddenLayers: [24,15,3], // array of ints for the sizes of the hidden layers in the network
         activation: "sigmoid", // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh'],
         leakyReluAlpha: 0.01, // supported for activation type 'leaky-relu'
       };
@@ -147,7 +146,6 @@ export class AiService {
       if ([...normalizedBuyInput, ...normalizedBuyInput].filter((e) => e.toString().indexOf("NaN") > -1).filter((e) => e.toString().indexOf("Infinity") > -1).length === 0) {
         const nns = +this.sellNet.run(normalizedSellInput[0])[0] * 100;
         const nnb = +this.buyNet.run(normalizedBuyInput[0])[0] * 100;
-        console.log("buy%:", roundNumber(nnb, 0.001), "sell%:", roundNumber(nns, 0.001));
         return { nns, nnb };
       } else {
         console.log(`wait for script to gather data first...run it again in ${CANDLES_BEFORE_PROFIT} minutes...`);
