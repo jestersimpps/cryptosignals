@@ -51,6 +51,7 @@ export class SignalService {
   }
 
   private calculateStochPriceDiff(candlesObject: CandlesObject): StochObject {
+    // TODO: calculate diff in movement between price and stoch
     const timeFrameArray = Object.keys(candlesObject);
     let stochObject = {} as StochObject;
 
@@ -133,13 +134,14 @@ export class SignalService {
     let rocObject = {} as RsiObject;
 
     for (const timeFrame of timeFrameArray) {
+      const lastPrice = candlesObject[timeFrame][candlesObject[timeFrame].length - 1].close;
       const input = {
         values: candlesObject[timeFrame].map((t: Candle) => t.close),
         period: TIMEFRAME,
       };
       const roc = ROC.calculate(input);
       const rocValue = getLastElement(roc);
-      rocObject[timeFrame] = rocValue;
+      rocObject[timeFrame] = rocValue / lastPrice;
     }
 
     return rocObject;

@@ -7,38 +7,36 @@ import { sendPrivateTelegramMessage } from "./telegram-api";
 import { roundNumber } from "./util";
 
 const prompts = require("prompts");
-const PAIR = "MATICUSDT";
+const PAIR = "BTCUSDT";
 const TELEGRAM_GROUP_ID = "-799174803";
 let lastMessage = null;
 const LAST_MESSAGE_TIMEOUT = 5 * 60 * 1000;
+const TRAINING_INTERVAL = 5 * 1000;
+const CHECK_INTERVAL = 1000;
 
 const generateInputs = (signals: Signals) => [
   signals.stoch.t1m.k.value,
-  signals.stoch.t1m.k.angle,
   signals.stoch.t1m.d.value,
-  signals.stoch.t1m.d.angle,
-  signals.stoch.t1m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+  signals.roc.t1m,
+  signals.adx.t1m.adx,
   signals.rsi.t1m,
 
   signals.stoch.t5m.k.value,
-  signals.stoch.t5m.k.angle,
   signals.stoch.t5m.d.value,
-  signals.stoch.t5m.d.angle,
-  signals.stoch.t5m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+  signals.roc.t5m,
+  signals.adx.t5m.adx,
   signals.rsi.t5m,
 
   signals.stoch.t15m.k.value,
-  signals.stoch.t15m.k.angle,
   signals.stoch.t15m.d.value,
-  signals.stoch.t15m.d.angle,
-  signals.stoch.t15m.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+  signals.roc.t15m,
+  signals.adx.t15m.adx,
   signals.rsi.t15m,
 
   signals.stoch.t1h.k.value,
-  signals.stoch.t1h.k.angle,
   signals.stoch.t1h.d.value,
-  signals.stoch.t1h.d.angle,
-  signals.stoch.t1h.cross ? (signals.stoch.t1m.cross === "UP" ? 1 : -1) : 0,
+  signals.roc.t1h,
+  signals.adx.t1h.adx,
   signals.rsi.t1h,
 ];
 
@@ -53,7 +51,7 @@ const init = async () => {
         { title: "Walls", value: 2 },
         { title: "Run Neural Net", value: 3 },
       ],
-      initial: 1,
+      initial: 2,
     },
   ]);
   switch (response.value) {
@@ -99,7 +97,7 @@ const init = async () => {
             const inputs = generateInputs(signals);
             aiService.addDataRow(inputs, candlesObject.t1m);
           },
-          60 * 1000
+          TRAINING_INTERVAL
         );
         // run net
         apiService.chartListener(
@@ -122,7 +120,7 @@ const init = async () => {
               }
             }
           },
-          1000
+          CHECK_INTERVAL
         );
       }
       break;
