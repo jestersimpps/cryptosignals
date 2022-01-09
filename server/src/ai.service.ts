@@ -28,16 +28,17 @@ export class AiService {
 
   private calculateProfit(side: "SELL" | "BUY", rowTimestamp: number, candles: Candle[]) {
     const inputCandle = candles.find((c) => c.time > rowTimestamp);
-    const profitCandles = candles.filter((c) => c.time > rowTimestamp);
+    const startPrice = inputCandle.close;
+    const futureCandles = candles.filter((c) => c.time > rowTimestamp);
     let cumulativeProfit = 0;
-    if (profitCandles.length) {
-      for (let index = 0; index < profitCandles.length; index++) {
-        const profitCandle = profitCandles[index];
+    if (futureCandles.length) {
+      for (let index = 0; index < futureCandles.length; index++) {
+        const futureCandle = futureCandles[index];
         if (side === "BUY") {
-          cumulativeProfit += profitCandle.close - inputCandle.close;
+          cumulativeProfit += futureCandle.close / startPrice;
         }
         if (side === "SELL") {
-          cumulativeProfit += inputCandle.close - profitCandle.close;
+          cumulativeProfit += startPrice / futureCandle.close;
         }
       }
       return cumulativeProfit;
@@ -122,7 +123,7 @@ export class AiService {
       if (!hasTrainedBuyRow && !hasTrainedSellRow) {
         if (+rowTimestamp + TIME_BEFORE_PROFIT_CHECK < currentLocalTimeStamp) {
           const sellProfit = this.calculateProfit("SELL", +rowTimestamp, candles);
-          const buyProfit = this.calculateProfit("SELL", +rowTimestamp, candles);
+          const buyProfit = this.calculateProfit("BUY", +rowTimestamp, candles);
           if (sellProfit && buyProfit) {
             const sellProfitRow = [...row, sellProfit];
             const buyProfitRow = [...row, buyProfit];

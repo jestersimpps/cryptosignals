@@ -11,7 +11,7 @@ const PAIR = "BTCUSDT";
 const TELEGRAM_GROUP_ID = "-799174803";
 let lastMessage = null;
 const LAST_MESSAGE_TIMEOUT = 5 * 60 * 1000;
-const TRAINING_INTERVAL = 5 * 1000;
+const TRAINING_INTERVAL = 10 * 1000;
 const CHECK_INTERVAL = 1000;
 
 const generateInputs = (signals: Signals) => [
