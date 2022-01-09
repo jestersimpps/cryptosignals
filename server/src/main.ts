@@ -110,12 +110,12 @@ const init = async () => {
             const result = await aiService.runNet(inputs);
             console.log("buy%:", roundNumber(result.nnb, 0.001), "sell%:", roundNumber(result.nns, 0.001));
             if (!lastMessage || lastMessage + LAST_MESSAGE_TIMEOUT < Date.now()) {
-              if (result.nnb > 60 && result.nns < 10) {
+              if (result.nnb > 50 * result.nns) {
                 // potential buy
                 sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `BUY ${PAIR} at ${signals.price} - buy%: ${roundNumber(result.nnb, 0.01)} sell%: ${roundNumber(result.nns, 0.01)}`);
                 lastMessage = Date.now();
               }
-              if (result.nns > 60 && result.nnb < 10) {
+              if (result.nns > 50 * result.nnb) {
                 // potential sell
                 sendPrivateTelegramMessage(TELEGRAM_GROUP_ID, `SELL ${PAIR} at ${signals.price} - buy%: ${roundNumber(result.nnb, 0.01)} sell%: ${roundNumber(result.nns, 0.01)}`);
                 lastMessage = Date.now();
